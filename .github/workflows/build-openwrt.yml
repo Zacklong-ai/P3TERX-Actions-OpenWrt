@@ -69,6 +69,14 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+      
+    - name: Clone passwall code
+      run: | 
+        git clone https://github.com/hong0980/luci-app-passwall.git ~/openwrt/package/lean/luci-app-passwall
+  
+    - name: Clone Hello World code
+      run: |
+        git clone https://github.com/jerrykuku/luci-app-vssr.git ~/openwrt/package/lean/luci-app-vssr
 
     - name: Load custom configuration
       run: |
